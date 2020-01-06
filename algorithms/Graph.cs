@@ -26,6 +26,10 @@ public class Graph {
     }
 
     public void AddEdge(int v, int w) {
+        //不允许平行边或者自环
+        if (v == w || HasEdge(v, w)) {
+            return;
+        }
         adj[v].Add(w);
         adj[w].Add(v);
         E++;
@@ -33,5 +37,12 @@ public class Graph {
 
     public List<int> GetAdj(int v) {
         return adj[v];
+    }
+
+    public bool HasEdge(int v, int w) {
+        foreach (var item in adj[v]) {
+            if (item == w) return true;
+        }
+        return false;
     }
 }
