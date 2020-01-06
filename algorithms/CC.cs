@@ -46,7 +46,7 @@ namespace algorithms {
             return count;
         }
 
-        public static void main(string[] args) {
+        public static void Main(string[] args) {
             Graph G = new Graph(new StreamReader(args[0]));
             CC cc = new CC(G);
 
