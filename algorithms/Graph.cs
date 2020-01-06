@@ -16,6 +16,30 @@ public class Graph {
         
     }
 
+    public Graph(string stream, char sp) {
+        using (var reader = new StreamReader(stream)) {
+            V = reader.Read();
+            adj = new List<int>[V];
+            for (int v = 0; v < V; v++) {
+                adj[v] = new List<int>();
+            }
+            E = reader.Read();
+            while (reader.Peek() > -1) {
+                string[] vertex = reader.ReadLine().Split(sp);
+                var s = int.Parse(vertex[0]);
+                for (int i = 1; i < vertex.Length; i++) {
+                    var v = -1;
+                    var result = int.TryParse(vertex[i], out v);
+                    if (result) {
+                        AddEdge(s, v);
+                    } else {
+                        throw new System.Exception("原始数据中有错误");
+                    }
+                }
+            }
+        }
+    }
+
     public Graph(StreamReader reader) : this(reader.Read()) {
         int e = reader.Read();
         for (int i = 0; i < e; i++) {
