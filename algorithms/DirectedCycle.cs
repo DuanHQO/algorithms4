@@ -39,6 +39,7 @@ namespace algorithms {
                     Cycle.Push(v);
                 }
             }
+            OnStack[v] = false;
         }
 
         public bool HasCycle() {
