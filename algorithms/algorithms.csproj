@@ -48,6 +48,9 @@
     <Compile Include="Cycle.cs" />
     <Compile Include="DegreeOfSeparation.cs" />
     <Compile Include="DepthFirstSearch.cs" />
+    <Compile Include="Digraph.cs" />
+    <Compile Include="DirectedCycle.cs" />
+    <Compile Include="DirectedDFS.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="GraphProperties.cs" />
     <Compile Include="Program.cs" />
