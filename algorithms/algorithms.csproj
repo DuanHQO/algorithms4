@@ -47,6 +47,7 @@
     <Compile Include="CC.cs" />
     <Compile Include="Cycle.cs" />
     <Compile Include="DegreeOfSeparation.cs" />
+    <Compile Include="DepthFirstOrder.cs" />
     <Compile Include="DepthFirstSearch.cs" />
     <Compile Include="Digraph.cs" />
     <Compile Include="DirectedCycle.cs" />
