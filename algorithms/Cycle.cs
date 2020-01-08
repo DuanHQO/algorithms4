@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace algorithms {
+﻿namespace algorithms {
     class Cycle {
         private bool[] marked;
         public bool HasCycle { get; private set; }
