@@ -5,7 +5,6 @@ namespace algorithms {
         public bool[] marked { get; private set; }
         public int[] edgeTo { get; private set; }
         private int[] distTo;
-        private int dis;
         private int s;
 
         public BreadthFirstPaths(Graph G, int s) {
