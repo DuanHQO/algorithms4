@@ -74,13 +74,17 @@
     <Compile Include="Graph.cs" />
     <Compile Include="GraphProperties.cs" />
     <Compile Include="KosarajuSCC.cs" />
+    <Compile Include="KruskalMST.cs" />
+    <Compile Include="LazyPrimMST.cs" />
     <Compile Include="MST.cs" />
+    <Compile Include="PrimMST.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedBlackBST.cs" />
     <Compile Include="SymbolGraph.cs" />
     <Compile Include="Topological.cs" />
     <Compile Include="TwoColor.cs" />
+    <Compile Include="WeightedQuickUnionUF.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

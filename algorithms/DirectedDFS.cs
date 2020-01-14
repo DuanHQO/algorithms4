@@ -10,7 +10,7 @@ namespace algorithms {
             Marked = new bool[G.V];
             DFS(G, s);
         }
-
+        
         public DirectedDFS(Digraph G, IEnumerable<int> sources) {
             Marked = new bool[G.V];
             foreach (var item in sources) {
