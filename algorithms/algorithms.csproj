@@ -70,6 +70,7 @@
     <Compile Include="Digraph.cs" />
     <Compile Include="DirectedCycle.cs" />
     <Compile Include="DirectedDFS.cs" />
+    <Compile Include="EdgeWeightedDigraph.cs" />
     <Compile Include="EdgeWeightedGraph.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="GraphProperties.cs" />
