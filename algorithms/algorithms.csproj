@@ -68,6 +68,7 @@
     <Compile Include="DepthFirstOrder.cs" />
     <Compile Include="DepthFirstSearch.cs" />
     <Compile Include="Digraph.cs" />
+    <Compile Include="DijkstraSP.cs" />
     <Compile Include="DirectedCycle.cs" />
     <Compile Include="DirectedDFS.cs" />
     <Compile Include="EdgeWeightedDigraph.cs" />

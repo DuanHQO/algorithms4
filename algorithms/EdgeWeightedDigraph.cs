@@ -26,11 +26,11 @@ namespace algorithms {
         }
 
         public override string ToString() {
-            return string.Format("{0}->{1} {2:f2}", GetV(), W, Weight);
+            return string.Format("{0}->{1} {2:f2}", v, w, Weight);
         }
     }
 
-    class EdgeWeightedDigraph {
+    public class EdgeWeightedDigraph {
         public int V { get; private set; }
         public int E { get; private set; }
         public List<DirectedEdge>[] adj { get; private set; }
