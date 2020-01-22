@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcyclicsSP.cs" />
     <Compile Include="BreadthFirstPaths.cs" />
     <Compile Include="CC.cs" />
     <Compile Include="Cycle.cs" />

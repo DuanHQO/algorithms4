@@ -2,7 +2,7 @@
 using System.IO;
 
 namespace algorithms {
-    class Digraph {
+    public class Digraph {
 
         public int V { get; private set; }
         public int E { get; private set; }

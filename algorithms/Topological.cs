@@ -17,6 +17,14 @@ namespace algorithms {
             }
         }
 
+        public Topological(EdgeWeightedDigraph G) {
+            var cycleFinder = new DirectedCycle(G);
+            if (!cycleFinder.HasCycle()) {
+                var dfs = new DepthFirstOrder(G);
+                Order = dfs.ReversePost;
+            }
+        }
+
         public bool IsDAG() {
             return Order != null;
         }
