@@ -12,6 +12,7 @@ namespace algorithms {
         private Queue<int> queue;
         private int cost;
         private IEnumerable<DirectedEdge> Cycle;
+        private int s;
 
         public Bellman_Ford(EdgeWeightedDigraph G, int s) {
             DistTo = new double[G.V];
@@ -21,6 +22,7 @@ namespace algorithms {
             for (int v = 0; v < G.V; v++) {
                 DistTo[v] = double.PositiveInfinity;
             }
+            this.s = s;
             DistTo[s] = 0.0;
             queue.Enqueue(s);
             OnQ[s] = true;
@@ -53,23 +55,38 @@ namespace algorithms {
         }
 
         private void FindNegativeCycle() {
-            throw new NotImplementedException();
+            var V = EdgeTo.Length;
+            var spt = new EdgeWeightedDigraph(V);
+            for (int v = 0; v < V; v++) {
+                if (EdgeTo[v] != null) {
+                    spt.AddEdge(EdgeTo[v]);
+                }
+            }
+            var cf = new EdgeWeightedCycleFinder(spt);
+            Cycle = cf.Cycle;
         }
 
         public bool HasPathTo(int v) {
-            throw new NotImplementedException();
+            return DistTo[v] < double.PositiveInfinity;
         }
 
+        //最短路径的查询API
         public IEnumerable<DirectedEdge> PathTo(int v) {
-            throw new NotImplementedException();
+            var path = new Stack<DirectedEdge>();
+            for (var x = v; x != s; x = EdgeTo[x].From()) {
+                path.Push(EdgeTo[x]);
+            }
+            return path;
         }
 
-        public IEnumerable<Edge> NegativeCycle() {
-            throw new NotImplementedException();
+        //获取负权重环、如果没有则返回null
+        public IEnumerable<DirectedEdge> NegativeCycle() {
+            return Cycle;
         }
 
+        //是否含有负权重环
         public bool HasNegativeCycle() {
-            throw new NotImplementedException();
+            return Cycle != null;
         }
 
     }

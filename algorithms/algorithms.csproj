@@ -75,6 +75,7 @@
     <Compile Include="DijkstraSP.cs" />
     <Compile Include="DirectedCycle.cs" />
     <Compile Include="DirectedDFS.cs" />
+    <Compile Include="EdgeWeightedCycleFinder.cs" />
     <Compile Include="EdgeWeightedDigraph.cs" />
     <Compile Include="EdgeWeightedGraph.cs" />
     <Compile Include="Graph.cs" />
