@@ -17,7 +17,7 @@ namespace algorithms {
             DistTo = new double[G.V];
             Marked = new bool[G.V];
             for (int v = 0; v < G.V; v++) {
-                DistTo[v] = double.MaxValue;
+                DistTo[v] = double.PositiveInfinity;
             }
             pq = new SortedDictionary<int, double>();
             DistTo[0] = 0.0;

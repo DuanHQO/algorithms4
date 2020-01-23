@@ -61,9 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcyclicLP.cs" />
     <Compile Include="AcyclicsSP.cs" />
+    <Compile Include="Bellman-Ford.cs" />
     <Compile Include="BreadthFirstPaths.cs" />
     <Compile Include="CC.cs" />
+    <Compile Include="CPM.cs" />
     <Compile Include="Cycle.cs" />
     <Compile Include="DegreeOfSeparation.cs" />
     <Compile Include="DepthFirstOrder.cs" />

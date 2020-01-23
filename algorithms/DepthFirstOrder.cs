@@ -11,7 +11,7 @@ namespace algorithms {
         public Queue<int> Post { get; private set; }
         public Stack<int> ReversePost { get; private set; }
 
-        public DepthFirstOrder(Digraph G) {
+        public DepthFirstOrder(EdgeWeightedDigraph G) {
             Pre = new Queue<int>();
             Post = new Queue<int>();
             ReversePost = new Stack<int>();
@@ -23,12 +23,12 @@ namespace algorithms {
             }
         }
 
-        private void DFS(Digraph g, int v) {
+        private void DFS(EdgeWeightedDigraph g, int v) {
             Pre.Enqueue(v);
             Marked[v] = true;
-            foreach (var w in g.Adj(v)) {
-                if (!Marked[w])
-                    DFS(g, w);
+            foreach (var w in g.adj[v]) {
+                if (!Marked[w.To()])
+                    DFS(g, w.To());
             }
             Post.Enqueue(v);
             ReversePost.Push(v);
