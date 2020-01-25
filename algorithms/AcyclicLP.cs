@@ -8,7 +8,6 @@ namespace algorithms {
     class AcyclicLP {
         private DirectedEdge[] EdgeTo;
         private double[] DistTo;
-        private object pq;
 
         public AcyclicLP(EdgeWeightedDigraph G, int s) {
             EdgeTo = new DirectedEdge[G.V];

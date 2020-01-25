@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace algorithms {
-    class Bellman_Ford {
+    class BellmanFordSP {
         private double[] DistTo;
         private DirectedEdge[] EdgeTo;
         private bool[] OnQ;
@@ -14,7 +14,7 @@ namespace algorithms {
         private IEnumerable<DirectedEdge> Cycle;
         private int s;
 
-        public Bellman_Ford(EdgeWeightedDigraph G, int s) {
+        public BellmanFordSP(EdgeWeightedDigraph G, int s) {
             DistTo = new double[G.V];
             EdgeTo = new DirectedEdge[G.V];
             OnQ = new bool[G.V];
@@ -26,7 +26,7 @@ namespace algorithms {
             DistTo[s] = 0.0;
             queue.Enqueue(s);
             OnQ[s] = true;
-            while (queue.Count > 0  ) {
+            while (queue.Count > 0 && !HasNegativeCycle()) {
                 var v = queue.Dequeue();
                 OnQ[v] = false;
                 Relax(G, v);
@@ -44,14 +44,19 @@ namespace algorithms {
                         OnQ[w] = true;
                     }
                 }
-                if(cost ++ % G.V == 0) {
+                //如果不存在从起点S可达的负权重环，算法会在进行v-1轮放松后结束，
+                //因为所有最短路含有的边数都不大于v-1，所以进行V轮后就可以检查一次负权重环
+                if(++cost % G.V == 0) {
                     FindNegativeCycle();
                 }
             }
         }
 
         public double DistToW(int v) {
-            throw new NotImplementedException();
+            if (HasNegativeCycle()) {
+                throw new Exception("Negative cost cycle exists");
+            }
+            return DistTo[v];
         }
 
         private void FindNegativeCycle() {

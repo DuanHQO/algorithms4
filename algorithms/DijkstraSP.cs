@@ -38,6 +38,7 @@ namespace algorithms {
             }
             DistTo[0] = 0.0;
             pq.Add(s, 0.0);
+            //核心就是每次选出权重最小点来继续搜索
             while (pq.Count > 0) {
                 var min = pq.Min();
                 Relax(G, min.Key);

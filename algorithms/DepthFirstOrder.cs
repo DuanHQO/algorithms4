@@ -23,6 +23,18 @@ namespace algorithms {
             }
         }
 
+        public DepthFirstOrder(Digraph G) {
+            Pre = new Queue<int>();
+            Post = new Queue<int>();
+            ReversePost = new Stack<int>();
+
+            Marked = new bool[G.V];
+            //for (int v = 0; v < G.V; v++) {
+            //    if (!Marked[v])
+            //        DFS(G, v);
+            //}
+        }
+
         private void DFS(EdgeWeightedDigraph g, int v) {
             Pre.Enqueue(v);
             Marked[v] = true;
